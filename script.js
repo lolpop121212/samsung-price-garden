@@ -1,14 +1,74 @@
 const phones = [
-  { name: "Galaxy S25 Ultra", price: 1299.99, tier: "flagship", color: "#5a5a68" },
-  { name: "Galaxy S25+", price: 999.99, tier: "flagship", color: "#a8dedc" },
-  { name: "Galaxy S25", price: 799.99, tier: "flagship", color: "#b9ecd6" },
-  { name: "Galaxy Z Fold 6", price: 1899.99, tier: "fold", color: "#4a5680" },
-  { name: "Galaxy Z Flip 6", price: 1099.99, tier: "fold", color: "#cbb8f5" },
-  { name: "Galaxy S24 FE", price: 649.99, tier: "mid", color: "#f3e3bd" },
-  { name: "Galaxy A55 5G", price: 449.99, tier: "mid", color: "#f5bdd0" },
-  { name: "Galaxy A35 5G", price: 399.99, tier: "mid", color: "#a8cdf2" },
-  { name: "Galaxy A15 5G", price: 199.99, tier: "budget", color: "#f7eaa6" },
-  { name: "Galaxy A05", price: 129.99, tier: "budget", color: "#f9cfae" },
+  {
+    name: "Galaxy S25 Ultra",
+    price: 1299.99,
+    tier: "flagship",
+    color: "#5a5a68",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Samsung_Galaxy_S25_Ultra.jpg/300px-Samsung_Galaxy_S25_Ultra.jpg",
+  },
+  {
+    name: "Galaxy S25+",
+    price: 999.99,
+    tier: "flagship",
+    color: "#7fb8a8",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Samsung_Galaxy_S25%2B.jpg/300px-Samsung_Galaxy_S25%2B.jpg",
+  },
+  {
+    name: "Galaxy S25",
+    price: 799.99,
+    tier: "flagship",
+    color: "#6fbf9f",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Samsung_Galaxy_S25%2B.jpg/300px-Samsung_Galaxy_S25%2B.jpg",
+  },
+  {
+    name: "Galaxy Z Fold 6",
+    price: 1899.99,
+    tier: "fold",
+    color: "#4a5680",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Samsung_Galaxy_Z_Fold_6.jpg/300px-Samsung_Galaxy_Z_Fold_6.jpg",
+  },
+  {
+    name: "Galaxy Z Flip 6",
+    price: 1099.99,
+    tier: "fold",
+    color: "#a98fd6",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Samsung_Galaxy_Z_Flip_6.jpg/300px-Samsung_Galaxy_Z_Flip_6.jpg",
+  },
+  {
+    name: "Galaxy S24 FE",
+    price: 649.99,
+    tier: "mid",
+    color: "#e3c47c",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Samsung_Galaxy_S24_FE_2024_%28cropped%29.jpg/300px-Samsung_Galaxy_S24_FE_2024_%28cropped%29.jpg",
+  },
+  {
+    name: "Galaxy A55 5G",
+    price: 449.99,
+    tier: "mid",
+    color: "#e090ad",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Samsung_Galaxy_A55_5G_2024.jpg/300px-Samsung_Galaxy_A55_5G_2024.jpg",
+  },
+  {
+    name: "Galaxy A35 5G",
+    price: 399.99,
+    tier: "mid",
+    color: "#7e9fd0",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Samsung_Galaxy_A35_5G_Phone_%28Front%29.jpg/300px-Samsung_Galaxy_A35_5G_Phone_%28Front%29.jpg",
+  },
+  {
+    name: "Galaxy A15 5G",
+    price: 199.99,
+    tier: "budget",
+    color: "#d6c468",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Samsung_Galaxy_A15_5G_2024.jpg/300px-Samsung_Galaxy_A15_5G_2024.jpg",
+  },
+  {
+    name: "Galaxy A05",
+    price: 129.99,
+    tier: "budget",
+    color: "#d89a6a",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Samsung_Galaxy_A05_2024.jpg/300px-Samsung_Galaxy_A05_2024.jpg",
+  },
 ];
 
 const grid = document.getElementById("grid");
@@ -41,8 +101,8 @@ function render() {
     card.innerHTML = `
       <div class="phone3d">
         <div class="spin">
-          <div class="face screen" style="background:${p.color}"></div>
-          <div class="face body" style="background:${p.color}">
+          <div class="face front"><img class="photo" src="${p.img}" alt="${p.name}" loading="lazy" /></div>
+          <div class="face back" style="background:${p.color}">
             <div class="cam"><span></span><span></span></div>
             <div class="lg">SAMSUNG</div>
           </div>
