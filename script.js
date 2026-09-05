@@ -1,14 +1,14 @@
 const phones = [
-  { name: "Galaxy S25 Ultra", price: 1299.99, tier: "flagship", emoji: "\u{1F600}" },
-  { name: "Galaxy S25+", price: 999.99, tier: "flagship", emoji: "\u{1F98B}" },
-  { name: "Galaxy S25", price: 799.99, tier: "flagship", emoji: "\u{1F31F}" },
-  { name: "Galaxy Z Fold 6", price: 1899.99, tier: "fold", emoji: "\u{1F9D6}" },
-  { name: "Galaxy Z Flip 6", price: 1099.99, tier: "fold", emoji: "\u{1F338}" },
-  { name: "Galaxy S24 FE", price: 649.99, tier: "mid", emoji: "\u2B50" },
-  { name: "Galaxy A55 5G", price: 449.99, tier: "mid", emoji: "\u{1F98B}" },
-  { name: "Galaxy A35 5G", price: 399.99, tier: "mid", emoji: "\u{1F49C}" },
-  { name: "Galaxy A15 5G", price: 199.99, tier: "budget", emoji: "\u{1F33B}" },
-  { name: "Galaxy A05", price: 129.99, tier: "budget", emoji: "\u{1F319}" },
+  { name: "Galaxy S25 Ultra", price: 1299.99, tier: "flagship", color: "#5a5a68" },
+  { name: "Galaxy S25+", price: 999.99, tier: "flagship", color: "#a8dedc" },
+  { name: "Galaxy S25", price: 799.99, tier: "flagship", color: "#b9ecd6" },
+  { name: "Galaxy Z Fold 6", price: 1899.99, tier: "fold", color: "#4a5680" },
+  { name: "Galaxy Z Flip 6", price: 1099.99, tier: "fold", color: "#cbb8f5" },
+  { name: "Galaxy S24 FE", price: 649.99, tier: "mid", color: "#f3e3bd" },
+  { name: "Galaxy A55 5G", price: 449.99, tier: "mid", color: "#f5bdd0" },
+  { name: "Galaxy A35 5G", price: 399.99, tier: "mid", color: "#a8cdf2" },
+  { name: "Galaxy A15 5G", price: 199.99, tier: "budget", color: "#f7eaa6" },
+  { name: "Galaxy A05", price: 129.99, tier: "budget", color: "#f9cfae" },
 ];
 
 const grid = document.getElementById("grid");
@@ -39,7 +39,15 @@ function render() {
     card.className = "card";
     card.style.animationDelay = `${i * 0.06}s`;
     card.innerHTML = `
-      <span class="emoji">${p.emoji}</span>
+      <div class="phone3d">
+        <div class="spin">
+          <div class="face screen" style="background:${p.color}"></div>
+          <div class="face body" style="background:${p.color}">
+            <div class="cam"><span></span><span></span></div>
+            <div class="lg">SAMSUNG</div>
+          </div>
+        </div>
+      </div>
       <div class="name">${p.name}</div>
       <div class="line"></div>
       <div class="desc">${tierLabel(p.tier)}</div>
